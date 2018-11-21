@@ -10,4 +10,5 @@ class Point extends Model
 
     use SoftDeletess;
     protected $dates = ['deleted_at'];
+    protected $fillable=['type','lat','lng'];
 }
