@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 11/21/18
- * Time: 1:39 AM
- */
 
 namespace App\Providers;
-
 
 use App\Repositories\Contracts\PointRepositoryInterface;
 use App\Repositories\Eloquent\EloquentPointRepository;
@@ -16,7 +9,7 @@ use Illuminate\Support\ServiceProvider;
 class RepositoryServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap the application services.
+     * Bootstrap services.
      *
      * @return void
      */
@@ -26,7 +19,7 @@ class RepositoryServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register the application services.
+     * Register services.
      *
      * @return void
      */

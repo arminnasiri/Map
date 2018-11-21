@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Point extends Model
 {
-
-    use SoftDeletess;
+    use SoftDeletes;
     protected $dates = ['deleted_at'];
     protected $fillable=['type','lat','lng'];
 }

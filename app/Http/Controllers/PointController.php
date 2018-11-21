@@ -21,6 +21,7 @@ class PointController extends Controller
 
     public function index()
     {
-       $this->pointRepository->paginate(10);
+       $all=$this->pointRepository->paginate(10);
+       return view('welcome',compact('all'));
     }
 }

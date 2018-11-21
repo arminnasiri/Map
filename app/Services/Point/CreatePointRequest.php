@@ -12,15 +12,15 @@ namespace App\Services\Point;
 class CreatePointRequest
 {
     private $type;
-    private  $Lat;
-    private $Lng;
+    private  $lat;
+    private $lng;
 
 
     public function __construct(array $data)
     {
         $this->type = $data['type'];
-        $this->Lat = $data['Lat'];
-        $this->Lng = $data['Lng'];
+        $this->lat = $data['lat'];
+        $this->lng = $data['lng'];
     }
     /**
      * @return mixed
@@ -35,7 +35,7 @@ class CreatePointRequest
      */
     public function getLat()
     {
-        return $this->Lat;
+        return $this->lat;
     }
 
     /**
@@ -43,6 +43,6 @@ class CreatePointRequest
      */
     public function getLng()
     {
-        return $this->Lng;
+        return $this->lng;
     }
 }

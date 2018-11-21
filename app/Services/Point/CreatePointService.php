@@ -10,6 +10,7 @@ namespace App\Services\Point;
 
 
 use App\Repositories\Contracts\PointRepositoryInterface;
+use App\Repositories\Eloquent\EloquentPointRepository;
 
 class CreatePointService
 {
@@ -26,7 +27,7 @@ class CreatePointService
     public function __construct(CreatePointRequest $createPointRequest)
     {
         $this->createPointRequest = $createPointRequest;
-        $this->pointRepository=resolve(PointRepositoryInterface::class);
+        $this->pointRepository=resolve(EloquentPointRepository::class);
     }
     public function perform()
     {

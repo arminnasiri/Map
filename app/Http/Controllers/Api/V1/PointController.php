@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Api\Contracts\ApiController;
 use App\Http\Resources\Points;
 use App\Repositories\Contracts\PointRepositoryInterface;
+use App\Repositories\Eloquent\EloquentPointRepository;
 use App\Services\Point\CreatePointRequest;
 use App\Services\Point\CreatePointService;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class PointController extends ApiController
      */
     private $pointRepository;
 
-    public function __construct(PointRepositoryInterface $pointRepository)
+    public function __construct(EloquentPointRepository $pointRepository)
     {
         $this->pointRepository = $pointRepository;
     }
@@ -43,6 +44,7 @@ class PointController extends ApiController
     }
     public function store(Request $request)
     {
+
         $createpointService = new CreatePointService(
             new CreatePointRequest(
                 [
@@ -62,11 +64,11 @@ class PointController extends ApiController
     public function destroy($id)
     {
        $delete= $this->pointRepository->delete($id);
-       if(is_null($delete))
+       if(!$delete)
        {
            return $this->respondNoFound("Point Not Found To Delete!");
        }
-        return response()->json($delete->toArray(),200);
+        return response()->json($delete,200);
     }
 
 

@@ -9,6 +9,8 @@
 namespace App\Repositories\Contracts;
 
 
+use App\Point;
+
 class EloquentBaseRepository implements RepositoryInterface
 {
     protected $model;
@@ -25,12 +27,7 @@ class EloquentBaseRepository implements RepositoryInterface
 
     public function delete(int $ID)
     {
-        if (intval($ID) > 0) {
-            return $this->model::onlyTrashed()
-                ->where('id', $ID)
-                ->get();
-        }
-        return null;
+            return $this->model::find($ID)->delete();
     }
 
     public function findBy(array $criteria, array $columns = null, bool $single = true)
@@ -56,7 +53,7 @@ class EloquentBaseRepository implements RepositoryInterface
     // return $this->query->paginate($perPage, $columns, $pageName, $page);
     public function paginate(int $page, $columns = ['*'], $pageName = 'page', int $per_page = 50)
     {
-        return $this->model::paginate($per_page, $columns, $pageName, $per_page);
+        return $this->model::paginate($page);
     }
 
 }
