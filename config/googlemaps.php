@@ -14,8 +14,8 @@ return [
     |
     */
     
-    'key'       => 'ADD_YOUR_SERVICE_KEY_HERE',
-        
+    'key'       => 'AIzaSyAhfJ_IL9EuKWSfDbh3ZbQ_rDqr2qUIc7k',
+
     /*
     |--------------------------------------------------------------------------
     | Verify SSL Peer
