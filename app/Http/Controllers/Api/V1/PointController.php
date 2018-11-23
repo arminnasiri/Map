@@ -5,11 +5,9 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Api\Contracts\ApiController;
 use App\Http\Resources\Points;
 use App\Repositories\Contracts\PointRepositoryInterface;
-use App\Repositories\Eloquent\EloquentPointRepository;
 use App\Services\Point\CreatePointRequest;
 use App\Services\Point\CreatePointService;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class PointController extends ApiController
 {
@@ -19,7 +17,7 @@ class PointController extends ApiController
      */
     private $pointRepository;
 
-    public function __construct(EloquentPointRepository $pointRepository)
+    public function __construct(PointRepositoryInterface $pointRepository)
     {
         $this->pointRepository = $pointRepository;
     }

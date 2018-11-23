@@ -25,6 +25,8 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(PointRepositoryInterface::class,EloquentPointRepository::class);
+        if(config('database.default')=='mysql') {
+            $this->app->bind(PointRepositoryInterface::class, EloquentPointRepository::class);
+        }
     }
 }

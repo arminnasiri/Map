@@ -11,6 +11,7 @@
         "ixudra/curl": "^6.16",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
+        "twbs/bootstrap": "^4.1",
         "vinelab/http": "^1.5"
     },
     "require-dev": {

@@ -27,7 +27,7 @@ class CreatePointService
     public function __construct(CreatePointRequest $createPointRequest)
     {
         $this->createPointRequest = $createPointRequest;
-        $this->pointRepository=resolve(EloquentPointRepository::class);
+        $this->pointRepository=resolve(PointRepositoryInterface::class);
     }
     public function perform()
     {
