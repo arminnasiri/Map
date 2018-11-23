@@ -68,7 +68,7 @@ class PointController extends ApiController
        {
            return $this->respondNoFound("Point Not Found To Delete!");
        }
-        return response()->json($delete,200);
+        return $this->respondDeleted();
     }
 
 

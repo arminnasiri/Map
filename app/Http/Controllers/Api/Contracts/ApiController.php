@@ -10,6 +10,13 @@ class ApiController extends Controller
 {
     protected $statusCode;
 
+    public function respondDeleted()
+    {
+        return $this
+            ->setStatusCode(Response::HTTP_OK)
+            ->respondWithSuccess('SoftDeleted Successful!');
+    }
+
     public function respondNoFound($message)
     {
         return $this

@@ -2,7 +2,7 @@ FROM php:7.2-fpm
 
 # Copy composer.lock and composer.json
 COPY composer.lock composer.json /var/www/
-
+RUN chown -R www-data:www-data /var/www
 # Set working directory
 WORKDIR /var/www
 
@@ -19,8 +19,7 @@ RUN apt-get update && apt-get install -y \
     vim \
     unzip \
     git \
-    curl \
-    nano
+    curl
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -45,7 +44,8 @@ COPY --chown=www:www . /var/www
 
 # Change current user to www
 USER www
-
+RUN chown -R www-data:www-data /var/www
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
 CMD ["php-fpm"]
+

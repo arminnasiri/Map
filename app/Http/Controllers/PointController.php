@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Repositories\Contracts\PointRepositoryInterface;
 use App\Repositories\Eloquent\EloquentPointRepository;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Ixudra\Curl\Facades\Curl;
 
 class PointController extends Controller
@@ -42,6 +43,10 @@ class PointController extends Controller
             }
         }
         //return all data city=tehran
+        if(!isset($data))
+        {
+            return response()->json('No found point in tehran',Response::HTTP_NOT_FOUND);
+        }
         return response()->json($data,200);
     }
 }

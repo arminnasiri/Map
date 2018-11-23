@@ -27,7 +27,10 @@ class EloquentBaseRepository implements RepositoryInterface
 
     public function delete(int $ID)
     {
+        if($this->model::find($ID)) {
             return $this->model::find($ID)->delete();
+        }
+        return false;
     }
 
     public function findBy(array $criteria, array $columns = null, bool $single = true)
