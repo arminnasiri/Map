@@ -1,3 +1,27 @@
+<h1>توضیحات پروژه</h1
+<br/>
+برای ایجاد یک نقطه از ادرس
+<br/>
+post:http://localhost/api/v1/ponits fields:type ,lat,lng
+<br/>
+برای دریافت کل اطلاعات از ادرس.
+<br/>
+get:http://localhost/api/v1/ponits .
+<br/>
+.برای جستجو یک اردس براساس ای دی
+<br/>
+get:http://localhost/api/v1/ponits/{id}.
+<br/>
+.برای حذف کردن از ادرس
+<br/>
+delete:http://localhost/api/v1/ponits/{id}.
+<br/>
+
+.برای دریافت کلیه نقاط داخل دیتا بیس که در تهران هستند از ادرس
+<br/>
+get:http://localhost/.
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
